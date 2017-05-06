@@ -16,9 +16,9 @@ A camada convolucional é a aplicação de um pequeno filtro, também chamado de
 A imagem abaixo essa ideia usando uma parade representando a entrada e diversas lanternas representando o kerkel.
 
 ![Exemplo de filtro convolucional em uma parede observando pela frente.](figs/conv_wall_front.png)
--> Exemplo de filtro convolucional em uma parede observando pela frente. <-
+<center> Exemplo de filtro convolucional em uma parede observando pela frente. </center>
 ![Exemplo de filtro convolucional em uma parede observando por cima.](figs/conv_wall_top.png)
--> Exemplo de filtro convolucional em uma parede observando por cima. <-
+<center> Exemplo de filtro convolucional em uma parede observando por cima. </center>
 
 Quando se utiliza uma camada convolucional em uma rede, deve-se levar em consideração o problema do "zero-padding". Existem 3 casos a serem levados em consideração, sengundo a nomeclatura do MATLAB, considere um vetor como entrada de tamanho 'm' e um filtro (kernel) de tamanho 'k':
  - Válida (valid)
