@@ -15,11 +15,13 @@ Os outros três tipos de camadas que compõem uma rede convolucional são: camad
 A camada convolucional é a aplicação de um pequeno filtro, também chamado de kernel, em várias partes da imagem. Repare que o mesmo filtro é utilizado em todas as partes da imagem. Isso torna esse problema embarassosamente paralelizavel, o que justifica o uso de GPUs para fazer esse processamento. Cada kernel representa uma unidade de processamento, ou seja, um neurônio. A saída desse neurônio será ativada caso a parte da imagem case com o filtro. Na prática, a saída de cada kernel é uma submatriz formada pela multiplicação escalar de cada elemento do kernel pelo elemento correspondente na imagem de entrada.
 A imagem abaixo essa ideia usando uma parade representando a entrada e diversas lanternas representando o kerkel.
 
+<p align="center">
 ![Exemplo de filtro convolucional em uma parede observando pela frente.](figs/conv_wall_front.png)
-<p align="center"> Exemplo de filtro convolucional em uma parede observando pela frente. </p>
+Exemplo de filtro convolucional em uma parede observando pela frente. </p>
 
+<p align="center">
 ![Exemplo de filtro convolucional em uma parede observando por cima.](figs/conv_wall_top.png)
-<p align="center"> Exemplo de filtro convolucional em uma parede observando por cima. </p>
+Exemplo de filtro convolucional em uma parede observando por cima. </p>
 
 
 Quando se utiliza uma camada convolucional em uma rede, deve-se levar em consideração o problema do "zero-padding". Existem 3 casos a serem levados em consideração, sengundo a nomeclatura do MATLAB, considere um vetor como entrada de tamanho 'm' e um filtro (kernel) de tamanho 'k':
