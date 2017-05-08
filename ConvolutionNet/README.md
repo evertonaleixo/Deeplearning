@@ -10,7 +10,7 @@ As redes convolucionais são uma especialização das redes neurais. Essas redes
 
 Os outros três tipos de camadas que compõem uma rede convolucional são: camada convolucional, de pooling e de retificação. A seguir será explicado cada uma delas. Para essas explicações, assuma que a entrada é uma imagem em escala de cinzas de 16x16 pixels. Assim, pode-se enxergar a entrada como uma matrix de 16 linhas com 16 colunas. Para simplificar ainda mais, sem perder a generalidade, assuma que cada célula apresenta o valor 1 se apresentar cor e 0 caso contrário.
 
-# Camada Convolucional
+## Camada Convolucional
 
 A camada convolucional é a aplicação de um pequeno filtro, também chamado de kernel, em várias partes da imagem. Repare que o mesmo filtro é utilizado em todas as partes da imagem. Isso torna esse problema embarassosamente paralelizavel, o que justifica o uso de GPUs para fazer esse processamento. Cada kernel representa uma unidade de processamento, ou seja, um neurônio. A saída desse neurônio será ativada caso a parte da imagem case com o filtro. Na prática, a saída de cada kernel é uma submatriz formada pela multiplicação escalar de cada elemento do kernel pelo elemento correspondente na imagem de entrada.
 A imagem abaixo essa ideia usando uma parade representando a entrada e diversas lanternas representando o kerkel.
@@ -64,6 +64,22 @@ Na figura procuramos um padrão na forma de uma reta rotacionada a um ângulo de
 ![Aplicação da camada convolucional.](figs/apply_conv.png)
 <p align="center"> Aplicação da camada convolucional para encontrar padrão em escala e posição diferente.</p>
 
-# Camada de Pooling
+## Camada de Pooling
 
-# Camada de retificação
+A camada de Pooling sempre vai trazer o efeito colateral de reduzi o tamanha da sua entrada. Por exemplo, aplicando uma camada de pooling com kernel de tamanho 2x2 em uma imagem de 16x16, a saída gerado por esta camada será uma imagem de 8x8.
+
+## Camada de retificação
+
+A camada de retificação é a camada mais simples da rede convolucional. Esta camada apenas faz um ajuste em cada posição de sua entrada. A função de ajuste mais utilizada é a RELU. A função desta camada para uma imagem como entrada (matriz de pixels) é fazer um ajuste nos pixels eliminando os valores negativos, visto que os valores válidos para um pixel varia de 0 a 255.
+
+Esses valores inválidos para os pixels podem ser gerados após a aplicação de uma camada de convolução devido aos filtros que vão sendo aprendidos para fazer a transformação dos dados, possibilitando separação das classes.
+
+A figura abaixo mostra o resultado da aplicação de uma camada de RELU em uma matriz que já sofreu o processo de convolução e está com valores inválidos.
+
+![Aplicação da camada RELU.](figs/apply_relu.png)
+<p align="center"> Aplicação da camada RELU para ajustar os valores da matriz para não negativos.</p>
+
+## Codificação
+Existem diversos framekorks que podemos utilizar para criar uma rede convolucional. Nesse repositório iremos fazer exemplos com alguns desses frameworks em Python. Novos exemplos com outros frameworks serão adicionados.
+
+* [TensorFlow](tensorflow/)
