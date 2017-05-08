@@ -66,7 +66,28 @@ Na figura procuramos um padrão na forma de uma reta rotacionada a um ângulo de
 
 ## Camada de Pooling
 
-A camada de Pooling sempre vai trazer o efeito colateral de reduzi o tamanha da sua entrada. Por exemplo, aplicando uma camada de pooling com kernel de tamanho 2x2 em uma imagem de 16x16, a saída gerado por esta camada será uma imagem de 8x8.
+A camada de Pooling sempre vai trazer o efeito colateral de reduzi o tamanha da sua entrada. Por exemplo, aplicando uma camada de pooling com kernel de tamanho 2x2 em uma imagem de 16x16, a saída gerada por esta camada será uma imagem de 8x8.
+
+Esta camada tem dois objetivos principais:
+
+* Gerar um maior nível de abstração para a rede, permitindo que a rede possa associar objetos semelhantes mas não iguais; e
+* Tratar objetos com pequenas rotações de forma igual.
+
+Usando essa camada, podemos transformar uma boca sorrindo e uma boca sem sorriso na mesma boca. As imagens abaixo mostram esse efeito com um Smile de 16x16. Na primeira o Smile esta sorrindo e é aplicado uma camada de polling de 2x2. Na segunda o Smile não esta sorrindo e tambem é aplicado a mesma camada de polling. Como resultado percebemos que temos 2 imagens iguais de 8x8.
+
+![Aplicação da camada de Pooling.](figs/apply_pooling_1.png)
+<p align="center"> Aplicação da camada de Pooling para generalizar a boca do Smile.</p>
+
+![Aplicação da camada de Pooling.](figs/apply_pooling_2.png)
+<p align="center"> Aplicação da camada de Pooling para generalizar a boca do Smile.</p>
+
+Neste exemplo, foi utilizado o MaxPooling como operção na camada de Pooling, onde é utilizado o maior valor dentro da janela de 2x2. Entretanto, existem diversas outras operações que podem ser aplicadas, como por exemplo, a AvgPooling, onde é utilizado a média aritimética dos valores da janela. Na literatura de deeplearning a mais utilizada é a MaxPooling.
+
+```
+	Exercício: Ver a diferença do resultado modificando apenas a operação de Pooling em alguma rede convolucional.
+```
+
+Por último, temos uma camada mais simples, a camada de ativação/retificação.
 
 ## Camada de retificação
 
