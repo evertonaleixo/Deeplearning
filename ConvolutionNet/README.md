@@ -73,7 +73,7 @@ Esta camada tem dois objetivos principais:
 * Gerar um maior nível de abstração para a rede, permitindo que a rede possa associar objetos semelhantes mas não iguais; e
 * Tratar objetos com pequenas rotações de forma igual.
 
-Usando essa camada, podemos transformar uma boca sorrindo e uma boca sem sorriso na mesma boca. As imagens abaixo mostram esse efeito com um Smile de 16x16. Na primeira o Smile esta sorrindo e é aplicado uma camada de polling de 2x2. Na segunda o Smile não esta sorrindo e tambem é aplicado a mesma camada de polling. Como resultado percebemos que temos 2 imagens iguais de 8x8.
+Usando essa camada, podemos transformar uma boca sorrindo e uma boca sem sorriso na mesma boca. As imagens abaixo mostram esse efeito com um Smile de 16x16. Na primeira o Smile esta sorrindo e é aplicado uma camada de polling de 2x2 com stride de 2. Na segunda o Smile  esta sorrindo menos e tambem é aplicado a mesma camada de polling. Como resultado percebemos que temos 2 imagens iguais de 8x8.
 
 ![Aplicação da camada de Pooling.](figs/apply_pooling_1.png)
 <p align="center"> Aplicação da camada de Pooling para generalizar a boca do Smile.</p>
