@@ -24,7 +24,7 @@ Isso é o que caracteriza as redes neurais recorrentes. Isso é, o uso de algum 
 h(t) = f(h(t−1) , x(t); θ)
 ```
 
-Onde 'x(t)' são os parametros externos, 'h(t-1)' é o resultado do último processamento deste neurônio e 'θ' são os filtros que devem ser aprendidos.
+Onde 'x(t)' são os parâmetros externos, 'h(t-1)' é o resultado do último processamento deste neurônio e 'θ' são os filtros que devem ser aprendidos.
 
 ## Modos de visualização
 ### Clássico
